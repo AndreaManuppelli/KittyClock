@@ -24,6 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/kittyclock.andreamanuppelli.github.io/",
             "outputPath": "dist/kitty-clock",
             "index": "src/index.html",
             "browser": "src/main.ts",
