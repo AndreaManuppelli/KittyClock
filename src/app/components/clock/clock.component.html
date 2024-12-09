@@ -3,9 +3,9 @@
 >
   <h1 class="text-4xl font-extrabold">Kitty Clock</h1>
   <div class="border-[10px] border-black rounded-full shadow-2xl">
-    <div class="border-4 border-white rounded-full">
+    <div class="border-[10px] border-white rounded-full">
       <div
-        class="h-96 w-96 bg-no-repeat bg-center bg-cover rounded-full relative border-[10px] border-primary"
+        class="h-96 w-96 bg-no-repeat bg-center bg-cover rounded-full relative border-[10px] border-primary shadow-2xl"
         style="background-image: url('/img/hello-kitty.png')"
       >
         <div
@@ -17,7 +17,7 @@
             [ngStyle]="{ transform: 'rotate(' + (i - 2) * 30 + 'deg)' }"
           >
             <span
-              class="text-4xl font-bold text-gray-700"
+              class="text-3xl font-bold p-4 rounded-3xl w-10 h-10 flex justify-center items-center bg-white shadow-lg"
               [ngStyle]="{
                 transform: 'translateX(160px) rotate(' + (i - 2) * 330 + 'deg)'
               }"
