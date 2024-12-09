@@ -35,8 +35,8 @@ export class ClockComponent implements AfterViewInit {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    this.hourAngle = (hours * 30) + (minutes / 2);
-    this.minuteAngle = minutes * 6;
-    this.secondAngle = seconds * 6;
+    this.hourAngle = (hours * 30) + (minutes / 2) - 90;
+    this.minuteAngle = minutes * 6 -90 ;
+    this.secondAngle = seconds * 6 -90;
   }
 }

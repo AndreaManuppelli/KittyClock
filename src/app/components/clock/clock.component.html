@@ -22,11 +22,11 @@
             }"
           >
             <span
-              class="font-bold rounded-3xl w-10 h-10 flex justify-center items-center bg-white shadow-lg"
+              class="font-bold border border-black rounded-3xl w-10 h-10 flex justify-center items-center bg-white shadow-lg"
               [ngStyle]="{
-                transform: 'translateX(' + (isLargeScreen ? '160px' : '100px') + ') ' + (i === 0 ? 'rotate(90deg)' : (i - 2 < 0 ? 'rotate(' + ( i * 30) + 'deg)' : 'rotate(-' + (i - 2) * 30 + 'deg)'))
+                transform: 'translateX(' + (isLargeScreen ? '160px' : '110px') + ') ' + (i === 0 ? 'rotate(70deg)' : (i - 2 < 0 ? 'rotate(' + ( i * 30) + 'deg)' : 'rotate(-' + (i - 2) * 30 + 'deg)'))
               }"
-              [ngClass]="{ 'text-sm p-1': !isLargeScreen, 'text-3xl p-4': isLargeScreen, 'translate-x-32 lg:translate-x-44': true,}"
+              [ngClass]="{ 'text-sm p-0': !isLargeScreen, 'text-3xl p-4': isLargeScreen, 'translate-x-32 lg:translate-x-44': true,}"
             >
               {{ hour }}
             </span>
