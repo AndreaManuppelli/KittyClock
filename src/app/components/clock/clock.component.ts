@@ -1,18 +1,19 @@
-import { Component, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
   styleUrl: './clock.component.scss'
 })
-export class ClockComponent implements AfterViewInit {
+export class ClockComponent implements OnInit {
 
   hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-
+  now=new Date();
   hourAngle = 0;
   minuteAngle = 0;
   secondAngle = 0;
   isLargeScreen = false;
+  loveKittyTimes = 0;
 
   constructor() {
     this.onResize();
@@ -23,7 +24,8 @@ export class ClockComponent implements AfterViewInit {
     this.isLargeScreen = window.innerWidth >= 1024;
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
+    this.updateClock();
     setInterval(() => {
       this.updateClock();
     }, 1000);
@@ -35,8 +37,14 @@ export class ClockComponent implements AfterViewInit {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    this.hourAngle = (hours * 30) + (minutes / 2) - 90;
+    this.hourAngle = (hours * 30) + (minutes / 2) - 95;
     this.minuteAngle = minutes * 6 -90 ;
-    this.secondAngle = seconds * 6 -90;
+    this.secondAngle = seconds * 6 - 90;
+    this.now = now;
+  }
+
+  public iLoveKitty(){
+    this.loveKittyTimes = this.loveKittyTimes + 1;
+
   }
 }
