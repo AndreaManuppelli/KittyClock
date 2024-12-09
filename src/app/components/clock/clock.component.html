@@ -2,28 +2,29 @@
   class="bg-white flex flex-col gap-4 items-center justify-center w-full h-full p-8 rounded-2xl border-[10px] border-black shadow-2xl"
 >
   <h1 class="text-4xl font-extrabold">Kitty Clock</h1>
-  <div class="border-[10px] border-primary rounded-full">
+  <div class="border-[10px] border-black rounded-full">
     <div
-    class="h-72 w-72 bg-no-repeat bg-center bg-cover rounded-full relative border-[10px] border-black"
-    style="background-image: url('/img/hello-kitty.png')"
-  >
-    <div
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
+      class="h-72 w-72 bg-no-repeat bg-center bg-cover rounded-full relative border-[10px] border-primary"
+      style="background-image: url('/img/hello-kitty.png')"
     >
       <div
-        *ngFor="let hour of hours; let i = index"
-        class="absolute w-full h-full flex items-center justify-center"
-        [ngStyle]="{ transform: 'rotate(' + i * 30 + 'deg)' }"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
       >
-        <span
-          class="text-2xl font-bold text-gray-700"
-          [ngStyle]="{ transform: 'translateX(120px)' }"
+        <div
+          *ngFor="let hour of hours; let i = index"
+          class="absolute w-full h-full flex items-center justify-center"
+          [ngStyle]="{ transform: 'rotate(' + (i + 1) * 30 + 'deg)' }"
         >
-          {{ hour }}
-        </span>
+          <span
+            class="text-2xl font-bold text-gray-700"
+            [ngStyle]="{
+              transform: 'translateX(120px) rotate(-' + (i + 1) * 30 + 'deg)'
+            }"
+          >
+            {{ hour }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-  
 </div>
