@@ -1,5 +1,5 @@
 <div
-  class="bg-white flex flex-col gap-4 items-center justify-center w-full h-full p-8 rounded-2xl border-[10px] border-black shadow-2xl"
+  class="flex flex-col gap-4 items-center justify-center w-full h-full p-8 rounded-2xl"
 >
   <h1 class="text-4xl font-extrabold">Kitty Clock</h1>
   <div class="border-[10px] border-black rounded-full shadow-2xl">
@@ -24,7 +24,7 @@
             <span
               class="font-bold border border-black rounded-3xl w-10 h-10 flex justify-center items-center bg-white shadow-lg"
               [ngStyle]="{
-                transform: 'translateX(' + (isLargeScreen ? '160px' : '110px') + ') ' + (i === 0 ? 'rotate(70deg)' : (i - 2 < 0 ? 'rotate(' + ( i * 30) + 'deg)' : 'rotate(-' + (i - 2) * 30 + 'deg)'))
+                transform: 'translateX(' + (isLargeScreen ? '160px' : '110px') + ') ' + (i === 0 ? 'rotate(72deg)' : (i - 2 < 0 ? 'rotate(' + ( i * 30) + 'deg)' : 'rotate(-' + (i - 2) * 30 + 'deg)'))
               }"
               [ngClass]="{ 'text-sm p-0': !isLargeScreen, 'text-3xl p-4': isLargeScreen, 'translate-x-32 lg:translate-x-44': true,}"
             >
