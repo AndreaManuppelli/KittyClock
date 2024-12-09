@@ -14,34 +14,46 @@
           <div
             *ngFor="let hour of hours; let i = index"
             class="absolute w-full h-full flex items-center justify-center"
-            [ngStyle]="{ transform: 'rotate(' + (i - 2) * 30 + 'deg)' }"
+            [ngStyle]="{
+              transform:
+                (i - 2) < 0
+                  ? 'rotate(' + ((i * 30) - 60) + 'deg)'
+                  : 'rotate(' + (i - 2) * 30 + 'deg)'
+            }"
           >
             <span
-              class="text-3xl font-bold p-4 rounded-3xl w-10 h-10 flex justify-center items-center bg-white shadow-lg"
+              class="font-bold rounded-3xl w-10 h-10 flex justify-center items-center bg-white shadow-lg"
               [ngStyle]="{
-                transform: 'translateX(160px) rotate(' + (i - 2) * 330 + 'deg)'
+                transform: 'translateX(' + (isLargeScreen ? '160px' : '100px') + ') ' + (i === 0 ? 'rotate(90deg)' : (i - 2 < 0 ? 'rotate(' + ( i * 30) + 'deg)' : 'rotate(-' + (i - 2) * 30 + 'deg)'))
               }"
+              [ngClass]="{ 'text-sm p-1': !isLargeScreen, 'text-3xl p-4': isLargeScreen, 'translate-x-32 lg:translate-x-44': true,}"
             >
               {{ hour }}
             </span>
           </div>
-          
+
           <div
             class="absolute shadow-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border bottom-0 w-1/2 h-[15px] bg-primary-900 rounded-full origin-left"
-            [ngStyle]="{ transform: 'translateY(7.5px) rotate(' + hourAngle + 'deg)' }"
+            [ngStyle]="{
+              transform: 'translateY(7.5px) rotate(' + hourAngle + 'deg)'
+            }"
           ></div>
           <div
             class="absolute shadow-lg w-1/2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[10px] bg-primary-700 rounded-full origin-left"
-            [ngStyle]="{ transform: 'translateY(5px) rotate(' + minuteAngle + 'deg)' }"
+            [ngStyle]="{
+              transform: 'translateY(5px) rotate(' + minuteAngle + 'deg)'
+            }"
           ></div>
           <div
             class="absolute shadow-lg w-1/2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border h-[5px] bg-primary-500 rounded-full origin-left"
-            [ngStyle]="{ transform: 'translateY(2.5px) rotate(' + secondAngle + 'deg)' }"
+            [ngStyle]="{
+              transform: 'translateY(2.5px) rotate(' + secondAngle + 'deg)'
+            }"
           ></div>
 
-          <div class="absolute h-12 w-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary border-[5px] border-white">
-
-          </div>
+          <div
+            class="absolute h-12 w-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary border-[5px] border-white"
+          ></div>
         </div>
       </div>
     </div>

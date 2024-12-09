@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
@@ -12,6 +12,16 @@ export class ClockComponent implements AfterViewInit {
   hourAngle = 0;
   minuteAngle = 0;
   secondAngle = 0;
+  isLargeScreen = false;
+
+  constructor() {
+    this.onResize();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isLargeScreen = window.innerWidth >= 1024;
+  }
 
   ngAfterViewInit() {
     setInterval(() => {
@@ -21,12 +31,12 @@ export class ClockComponent implements AfterViewInit {
 
   updateClock() {
     const now = new Date();
-    const hours = now.getHours() % 12; 
+    const hours = now.getHours() % 12;
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-  
-    this.hourAngle = (hours * 30) + (minutes * 0.5) - 90 - (minutes * 6 / 12); 
-    this.minuteAngle = minutes * 6 - 90; 
-    this.secondAngle = seconds * 6 - 90; 
+
+    this.hourAngle = (hours * 30) + (minutes / 2);
+    this.minuteAngle = minutes * 6;
+    this.secondAngle = seconds * 6;
   }
 }
