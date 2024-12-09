@@ -5,11 +5,11 @@
   <div class="border-[10px] border-black rounded-full shadow-2xl">
     <div class="border-[10px] border-white rounded-full">
       <div
-        class="h-96 w-96 bg-no-repeat bg-center bg-cover rounded-full relative border-[10px] border-primary shadow-2xl"
+        class="h-64 w-64 lg:h-96 lg:w-96 bg-no-repeat bg-center bg-cover rounded-full relative border-[10px] border-primary shadow-2xl"
         style="background-image: url('/img/hello-kitty.png')"
       >
         <div
-          class="absolute top-1/8 left-1/8 transform -translate-x-1/8 -translate-y-1/8 w-full h-full"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
         >
           <div
             *ngFor="let hour of hours; let i = index"
@@ -24,6 +24,23 @@
             >
               {{ hour }}
             </span>
+          </div>
+          
+          <div
+            class="absolute shadow-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border bottom-0 w-1/2 h-[15px] bg-primary-900 rounded-full origin-left"
+            [ngStyle]="{ transform: 'translateY(7.5px) rotate(' + hourAngle + 'deg)' }"
+          ></div>
+          <div
+            class="absolute shadow-lg w-1/2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[10px] bg-primary-700 rounded-full origin-left"
+            [ngStyle]="{ transform: 'translateY(5px) rotate(' + minuteAngle + 'deg)' }"
+          ></div>
+          <div
+            class="absolute shadow-lg w-1/2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border h-[5px] bg-primary-500 rounded-full origin-left"
+            [ngStyle]="{ transform: 'translateY(2.5px) rotate(' + secondAngle + 'deg)' }"
+          ></div>
+
+          <div class="absolute h-12 w-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary border-[5px] border-white">
+
           </div>
         </div>
       </div>
