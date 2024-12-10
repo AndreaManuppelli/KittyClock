@@ -27,12 +27,14 @@
             "repo": "https://github.com/andreamanuppelli/KittyClock.git",
             "branch": "gh-pages",
             "baseHref": "/KittyClock/",
-            "dir": "dist/kitty-clock/browser/"
+            "dir": "dist/kitty-clock/browser/",
+            "deployUrl": "/KittyClock/"
           }
         },
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "deployUrl": "/KittyClock/",
             "baseHref": "/KittyClock/",
             "outputPath": "dist/kitty-clock",
             "index": "src/index.html",
