@@ -26,7 +26,7 @@
           "options": {
             "repo": "https://github.com/andreamanuppelli/KittyClock.git",
             "branch": "gh-pages",
-            "dir": "dist/KittyClock/"
+            "dir": "dist/kitty-clock/browser/"
           }
         },
         "build": {
