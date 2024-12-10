@@ -28,7 +28,7 @@
             "branch": "gh-pages",
             "baseHref": "https://andreamanuppelli.github.io/KittyClock/",
             "dir": "dist/kitty-clock/browser/",
-            "deployUrl": "/KittyClock/"
+            "deployUrl": "https://andreamanuppelli.github.io/KittyClock/"
           }
         },
         "build": {
