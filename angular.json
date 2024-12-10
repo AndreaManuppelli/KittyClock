@@ -48,6 +48,7 @@
                 "input": "public"
               }
             ],
+            "externalDependencies": ["img/*"],
             "styles": ["src/styles.scss"],
             "scripts": []
           },
