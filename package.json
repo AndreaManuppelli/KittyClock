@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /KittyClock/",
+    "build": "ng build --base-href /KittyClock/ --deploy-url https://andreamanuppelli.github.io/KittyClock/",
     "deploy": "ng deploy --base-href /KittyClock/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
